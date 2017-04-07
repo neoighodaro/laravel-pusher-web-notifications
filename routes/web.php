@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('push', function () {
+Route::get('test', function () {
     event(new App\Events\StatusActionEvent('Someone', 'liked'));
     return "Event has been sent!";
 });
