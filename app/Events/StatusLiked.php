@@ -10,13 +10,11 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class StatusActionEvent implements ShouldBroadcast
+class StatusLiked implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $username;
-
-    public $verb;
 
     public $message;
 
@@ -25,13 +23,10 @@ class StatusActionEvent implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct($username, $verb)
+    public function __construct($username)
     {
         $this->username = $username;
-
-        $this->verb = $verb;
-
-        $this->message = "{$username} {$verb} your status";
+        $this->message  = "{$username} liked your status";
     }
 
     /**
@@ -41,6 +36,6 @@ class StatusActionEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return ['lwn-status-demo'];
+        return ['status-liked'];
     }
 }
