@@ -12,7 +12,7 @@
 */
 
 Route::get('test', function () {
-    event(new App\Events\StatusActionEvent('Someone', 'liked'));
+    event(new App\Events\StatusLiked('Guest'));
     return "Event has been sent!";
 });
 
