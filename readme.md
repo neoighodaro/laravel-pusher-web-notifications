@@ -6,6 +6,7 @@ This is an example of how to create web notifications. You can read the article 
 ## Getting Started
 - Download or clone the project
 - Rename `.env.example` to `.env`
+- Run `composer install` to install the dependencies
 - Open `resources/views/welcome.blade.php` and update the Pusher keys
 - Update the `PUSHER_APP_*` keys in the .env file
 - Change the `BROADCAST_DRIVER` to `pusher`
